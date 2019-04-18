@@ -25,4 +25,5 @@ int is_in_list(linkList list, int ky);
 int find(linkList list, int ky);
 void print_list(linkList list);
 int* create_array(linkList list);
+int insert(linkList* list, int dat, int ky);
 #endif /* linkedList_h */

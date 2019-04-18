@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D522DFF2267936A00878DA1 /* stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 5D522DFE2267936A00878DA1 /* stack.c */; };
 		5DE38B81225D0234007C214A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DE38B80225D0234007C214A /* main.c */; };
 		5DE38B89225D027F007C214A /* linkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DE38B88225D027F007C214A /* linkedList.c */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D522DFD2267936A00878DA1 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		5D522DFE2267936A00878DA1 /* stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stack.c; sourceTree = "<group>"; };
 		5DE38B7D225D0234007C214A /* Lab0105-rfasullo15 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab0105-rfasullo15"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE38B80225D0234007C214A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		5DE38B87225D027F007C214A /* linkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linkedList.h; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				5DE38B80225D0234007C214A /* main.c */,
+				5D522DFD2267936A00878DA1 /* stack.h */,
+				5D522DFE2267936A00878DA1 /* stack.c */,
 				5DE38B87225D027F007C214A /* linkedList.h */,
 				5DE38B88225D027F007C214A /* linkedList.c */,
 			);
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D522DFF2267936A00878DA1 /* stack.c in Sources */,
 				5DE38B89225D027F007C214A /* linkedList.c in Sources */,
 				5DE38B81225D0234007C214A /* main.c in Sources */,
 			);

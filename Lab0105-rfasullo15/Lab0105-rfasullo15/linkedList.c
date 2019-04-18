@@ -37,17 +37,44 @@ int find(linkList list, int ky){
     return 0;
 }
 
-int insert(linkList list, int dat, int ky){
+int insert(linkList* list, int dat, int ky){
     
-    if(is_in_list(list, ky) == 0){
+    if(is_in_list(*list, ky) == 0){
+        node* current = list -> head;
+        if (current -> key > ky){
+            node* nw_ptr = (node*)malloc(sizeof(node));
+            nw_ptr -> data = dat;
+            nw_ptr -> key = ky;
+            nw_ptr -> next = current;
+            
+            list->head = nw_ptr;
+            
+            return 1;
+        }
+        while(current!=NULL){
+            if (current -> key < ky && current -> next == NULL){
+                node* nw_ptr = (node*)malloc(sizeof(node));
+                nw_ptr -> data = dat;
+                nw_ptr -> key = ky;
+                nw_ptr -> next = NULL;
+                
+                current ->next = nw_ptr;
+                return 1;
+            } else if ((current -> key < ky) && current ->next -> key > ky){
+                node* nw_ptr = (node*)malloc(sizeof(node));
+                nw_ptr -> data = dat;
+                nw_ptr -> key = ky;
+                nw_ptr -> next = current-> next;
+                
+                current -> next = nw_ptr;
+                return 1;
+            } else {
+                current = current -> next;
+            }
+        }
         
-        
-        
-        //node* node_ptr = (node*)malloc(sizeof(node));
-        return 1;
+        return 0;
     } else {
-    
-    
         return 0;
     }
 }
