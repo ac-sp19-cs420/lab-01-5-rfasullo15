@@ -18,4 +18,6 @@ typedef struct stack {
 
 int is_empty(stack s);
 int top(stack s);
+void push(int value, stack* s);
+int pop(stack* s);
 #endif /* stack_h */

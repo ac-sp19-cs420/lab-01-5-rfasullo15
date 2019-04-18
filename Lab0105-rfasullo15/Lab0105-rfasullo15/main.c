@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include "linkedList.h"
 #include "stack.h"
+#include "queue.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -99,6 +100,29 @@ int main(int argc, const char * argv[]) {
     int pop_val = pop(s_ptr);
     printf("The popped value was %d\n", pop_val);
     print_list(*(s_ptr -> list));
+    
+    push(32, s_ptr);
+    print_list(*(s_ptr -> list));
+    
+    /****************** END STACK TESTING ***********************/
+    
+    /****************** BEGIN QUEUE TESTING *********************/
+    
+    queue* q_ptr = (queue*)malloc(sizeof(queue));
+    
+    value = isempty(*q_ptr);
+    printf("Value: %d\n", value);
+    
+    q_ptr -> list = l_ptr;
+    value = isempty(*q_ptr);
+    printf("Value: %d\n", value);
+    
+    q_ptr -> list = list_ptr;
+    value = isempty(*q_ptr);
+    printf("Different Value?: %d\n", value);
+    
+    int last_val = last(*q_ptr);
+    printf("The last value is %d\n", last_val);
     
     return 0;
 }

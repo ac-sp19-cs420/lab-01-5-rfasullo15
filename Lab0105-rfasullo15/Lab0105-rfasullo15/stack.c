@@ -21,7 +21,14 @@ void push (int value, stack* s){
     node* current = s -> list -> head;
     while(current != NULL){
         current -> key += 1;
+        current = current -> next;
     }
+    
+    nw_node -> next = s -> list -> head;
+    
+    s-> list -> head = nw_node;
+    
+    
     
 }
 
