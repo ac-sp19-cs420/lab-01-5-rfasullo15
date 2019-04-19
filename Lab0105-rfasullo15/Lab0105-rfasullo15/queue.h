@@ -18,4 +18,7 @@ typedef struct queue{
 
 int isempty(queue q);
 int last(queue q);
+void pushq(int value, queue* q);
+int popq(queue* q);
+
 #endif /* queue_h */

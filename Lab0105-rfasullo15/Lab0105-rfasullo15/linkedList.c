@@ -10,7 +10,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+/*
+ This method checks to see if there is a node in the list that already has the given key. If
+ so, it returns 1, if not it returns 0.
+ */
 int is_in_list(linkList list, int ky){
     node* current = list.head;
     while (current != NULL){
@@ -23,6 +26,10 @@ int is_in_list(linkList list, int ky){
     return 0;
 }
 
+/*
+ Find will return the data at the specified key if a node with that key exists. If the key doesnt
+ exist it returns 0.
+ */
 int find(linkList list, int ky){
     if(is_in_list(list, ky) == 1){
         node* current = list.head;
@@ -37,6 +44,11 @@ int find(linkList list, int ky){
     return 0;
 }
 
+/*
+ Insert checks to see if there is already a node with that key and if not, creates a new node and
+ inserts the new node in numerical order. If the insertion is successful it will return 1, if it
+ is not successful it will return 0.
+ */
 int insert(linkList* list, int dat, int ky){
     
     if(is_in_list(*list, ky) == 0){
@@ -52,7 +64,7 @@ int insert(linkList* list, int dat, int ky){
             return 1;
         }
         while(current!=NULL){
-            if (current -> key < ky && current -> next == NULL){
+            if (current -> key < ky && current -> next == NULL){ //If you are at the end of the list
                 node* nw_ptr = (node*)malloc(sizeof(node));
                 nw_ptr -> data = dat;
                 nw_ptr -> key = ky;
@@ -60,7 +72,7 @@ int insert(linkList* list, int dat, int ky){
                 
                 current ->next = nw_ptr;
                 return 1;
-            } else if ((current -> key < ky) && current ->next -> key > ky){
+            } else if ((current -> key < ky) && current ->next -> key > ky){ // if you are in the middle of the list
                 node* nw_ptr = (node*)malloc(sizeof(node));
                 nw_ptr -> data = dat;
                 nw_ptr -> key = ky;
@@ -79,6 +91,10 @@ int insert(linkList* list, int dat, int ky){
     }
 }
 
+/*
+ Turns the linked list into an array of integers and returns the pointer to the array. This method
+ only retains the data values, not the keys.
+ */
 int* create_array(linkList list){
     node* current = list.head;
     int* array = (int*)malloc(sizeof(int));
@@ -101,6 +117,9 @@ int* create_array(linkList list){
     return array;
 }
 
+/*
+ This method prints out the linked list in the format "Node [key]: [data]"
+ */
 void print_list(linkList list){
     node* current = list.head;
     while (current != NULL) {

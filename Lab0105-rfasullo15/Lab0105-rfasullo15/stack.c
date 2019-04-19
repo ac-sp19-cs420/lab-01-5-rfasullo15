@@ -11,7 +11,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+/*
+ Inserts a new node as the head of the list and increments all of the keys to refelct the change
+ in the list. Void method.
+ */
 void push (int value, stack* s){
     node* nw_node = (node*)malloc(sizeof(node));
     nw_node -> data = value;
@@ -32,6 +35,9 @@ void push (int value, stack* s){
     
 }
 
+/*
+ Removes the head of the stack and returns the data value of the head.
+ */
 int pop (stack* s){
     if(is_empty(*s) == 0){
         node* old = s-> list-> head;
@@ -43,6 +49,9 @@ int pop (stack* s){
     return 0;
 }
 
+/*
+ Returns the data value of the head of the stack but does not alter the stack at all.
+ */
 int top (stack s){
     if (is_empty (s) == 0){
         return s.list -> head -> data;
@@ -51,6 +60,11 @@ int top (stack s){
     }
 }
 
+/*
+ Checks to see if the stack is empty. The stack is empty when there is no linked list associated
+ with the stack or if the linked list associated with the stack has no nodes in it. Returns 1 if
+ empty and 0 if not.
+ */
 int is_empty(stack s){
     if (s.list == NULL || s.list -> head == NULL){
         return 1;

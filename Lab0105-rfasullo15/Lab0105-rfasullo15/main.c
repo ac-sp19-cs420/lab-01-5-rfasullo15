@@ -124,5 +124,14 @@ int main(int argc, const char * argv[]) {
     int last_val = last(*q_ptr);
     printf("The last value is %d\n", last_val);
     
+    pushq(87, q_ptr);
+    print_list(*(q_ptr-> list));
+    
+    last_val = popq(q_ptr);
+    printf("The last value is %d\n", last_val);
+    print_list(*(q_ptr -> list));
+    
+    
+    
     return 0;
 }
